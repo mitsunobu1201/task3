@@ -18,7 +18,7 @@ class BooksController < ApplicationController
       if @book.user == current_user
         render :edit
       else
-        redirect_to index
+        redirect_to books_path
       end
     end
     
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
     end
   
     def post_book
-      params.require(:book).permit(:title, :opinion)
+      params.require(:book).permit(:title, :body)
     end
 
 end

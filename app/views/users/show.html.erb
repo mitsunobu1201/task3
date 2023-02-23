@@ -28,8 +28,8 @@
           <%= f.text_field :title,class:"form-control book_title" %>
         </div>
         <div class="form-group">
-          <label for="book_opinion">Opinion</label>
-          <%= f.text_field :opinion,class:"form-control book_title" %>
+          <label for="book_body">Opinion</label>
+          <%= f.text_field :body,class:"form-control book_title" %>
         </div>
         <div class="form-group">
           <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book" />
@@ -59,7 +59,7 @@
                   <% end %>
                 </td>
                 <td><%= link_to book.title, book_path(book.id) %></td>
-                <td><%= book.opinion %></td>
+                <td><%= book.body %></td>
               </tr>
             <% end %>
           </tbody>

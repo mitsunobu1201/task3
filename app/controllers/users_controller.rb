@@ -9,16 +9,17 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @book = Book.new
-      @books = @user.book
+      @books = @user.books
     end
     
     def edit
+      @users = User.all
       @user = User.find(params[:id])
       #ログインユーザーと編集しようとしているユーザーが一致するか。一致しなければindexへ転送
       if @user == current_user
          @user = User.find(params[:id])
       else
-        render :index
+        redirect_to user_path(current_user)
       end
     end  
     
